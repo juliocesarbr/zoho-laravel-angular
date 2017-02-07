@@ -1,20 +1,29 @@
+/*Definición de App y de Rutas con Angular Route*/
+var zohoApp = angular.module('zohoApp', [
+  'ngRoute',
+  'zohoAppControllers'
+]);
 
-/**
- * First we will load all of this project's JavaScript dependencies which
- * include Vue and Vue Resource. This gives a great starting point for
- * building robust, powerful web applications using Vue and Laravel.
- */
+zohoApp.config(['$routeProvider', function($routeProvider) {
+    
+    $routeProvider.
+    /*Ruta de Acceso*/
+    when('/', {
+        templateUrl: 'vistas/login.html',
+        controller: 'LoginController'
+    }).
+    /*Ruta de Salida*/
+    when('/logout', {
+        templateUrl: 'vistas/logout.html',
+        controller: 'LogoutController'
+    }).
+    /*Ruta de Pantalla Principal*/
+    when('/dashboard', {
+        templateUrl: 'vistas/index.html',
+        controller: 'MainController'
+    }).
+    otherwise({
+        redirectTo: '/'
+    });
 
-require('./bootstrap');
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-Vue.component('example', require('./components/Example.vue'));
-
-const app = new Vue({
-    el: '#app'
-});
+}]);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" ng-app="zohoApp">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
         <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
         <!--Angular-->
         <script src="bower_components/angular/angular.min.js"></script>
-        <script src="bower_components/lodash/lodash.min.js"></script>
+        <script src="bower_components/lodash/dist/lodash.min.js"></script>
         <script src="bower_components/angular-route/angular-route.min.js"></script>
         <script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
         <script src="bower_components/restangular/dist/restangular.min.js"></script>
@@ -32,10 +32,14 @@
                     <h1>Aplicacion de Invoices de Zoho</h1>
                 </div>
             </div>
+            <!--Contenedor de Vistas-->
+            <div ng-view></div>
+            <!--Contenedor de Vistas-->
         </div>
         <!--Contenedor Principal-->
 
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="js/app.js"></script>
     </body>
 </html>
