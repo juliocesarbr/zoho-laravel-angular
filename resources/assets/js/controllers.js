@@ -1,13 +1,13 @@
 var zohoAppControllers = angular.module('zohoAppControllers', []);
 
-zohoAppControllers.controller('LoginController', ['$scope', '$http', function ($scope, $http) {
-
-}]);
-
-zohoAppControllers.controller('LogoutController', ['$scope', '$http', function ($scope, $http) {
-
-}]);
 
 zohoAppControllers.controller('MainController', ['$scope', '$http', function ($scope, $http) {
-    
+
+	//Consulta la API para traer los contactos
+    $http.get('api.php')
+    .then(function(response, status, headers, config) {
+        $scope.invoices = response.data.invoices;
+        console.log($scope.invoices);
+    });
+
 }]);

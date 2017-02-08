@@ -1,1 +1,32 @@
-<h1>Pantalla Principal</h1>
+<div ng-controller="MainController">
+	<div class="row">
+	<table class="table table-bordered"> 
+		<thead> 
+		<tr> 
+			<th>#</th> 
+			<th>Fecha</th> 
+			<th>Número de Invoice</th> 
+			<th>Número de Orden</th>
+			<th>Nombre de Cliente</th> 
+			<th>Status</th>
+			<th>Fecha de Vencimiento</th>
+			<th>Monto</th>
+			<th>Saldo Adeudado</th>
+		</tr> 
+		</thead> 
+		<tbody> 
+		<tr ng-repeat="invoice in invoices">
+			<td>{{ $index + 1 }}</td>
+	    	<td>{{ invoice.date }}</td>
+	    	<td>{{ invoice.invoice_number }}</td>
+	    	<td>{{ invoice.reference_number }}</td>
+			<td>{{ invoice.customer_name }}</td>
+	    	<td>{{ invoice.status }}</td>
+	    	<td>{{ invoice.due_date }}</td>
+	    	<td>{{invoice.currency_code}}{{ invoice.total }}</td>
+	    	<td>{{invoice.currency_code}}{{ invoice.balance }}</td>	  	
+	    </tr>
+		</tbody> 
+	</table>
+	</div>
+</div>

@@ -7,6 +7,7 @@ elixir((mix) => {
     //Unifico los scripts requeridos para angular en un solo archivo con gulp
     mix.scripts([
     	'app.js',
-    	'controllers.js'
+    	'controllers.js',
+    	'services.js'
     ], 'public/js/app.js');
 });
