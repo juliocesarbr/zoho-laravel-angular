@@ -10,4 +10,8 @@ zohoAppControllers.controller('MainController', ['$scope', '$http', function ($s
         console.log($scope.invoices);
     });
 
+    $scope.mayorA = function(){
+    	console.log('Actua');
+    };
+
 }]);

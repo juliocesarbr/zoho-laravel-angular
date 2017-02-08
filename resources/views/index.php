@@ -31,9 +31,6 @@
                 <div class="col-md-12">
                     <h1>
                         Invoices de Zoho 
-                        <button class="btn btn-primary" ng-click="consultaInvoices()">Refrescar</button>
-                        <button class="btn btn-primary" ng-click="mayorA()"> > 100$</button>
-                        <button class="btn btn-primary" ng-click="cambiaVista()">Otra Manera</button>
                     </h1>
 
                 </div>
