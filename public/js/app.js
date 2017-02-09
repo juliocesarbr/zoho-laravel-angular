@@ -24,17 +24,21 @@ var zohoAppControllers = angular.module('zohoAppControllers', []);
 zohoAppControllers.controller('MainController', ['$scope', '$http', function ($scope, $http) {
 
 	//Consulta la API para traer los contactos
-    $http.get('api.php')
-    .then(function(response, status, headers, config) {
-        $scope.invoices = response.data.invoices;
-        console.log($scope.invoices);
-    });
-
+    $scope.consultaInvoices = function () {
+	    $http.get('/service/getZohoData')
+		    .then(function(response, status, headers, config) {
+			    $scope.invoices = response.data.invoices;
+			    console.log($scope.invoices);
+		    });
+    }
     $scope.mayorA = function(){
     	console.log('Actua');
     };
 
+	$scope.consultaInvoices();
+
 }]);
+
 /*Defino los servicios de la Aplicación Zoho*/
 var zohoAppServices = angular.module('zohoAppServices', [
     'LocalStorageModule'
