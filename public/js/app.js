@@ -31,8 +31,12 @@ zohoAppControllers.controller('MainController', ['$scope', '$http', function ($s
 			    console.log($scope.invoices);
 		    });
     }
-    $scope.mayorA = function(){
-    	console.log('Actua');
+
+    $scope.filtraInvoices = function(){
+
+    };
+    $scope.mayorA = function(data){
+    	console.log('mayorA');
     };
 
 	$scope.consultaInvoices();
@@ -45,25 +49,6 @@ var zohoAppServices = angular.module('zohoAppServices', [
 ]);
 
 zohoAppServices.factory('userService', ['$http', 'localStorageService', function($http, localStorageService) {
-
-    /*Funcion que Busca los Datos*/
-    function getDatos(){
-        console.log('Hola Julio');
-
-        $http.post('/api/auth/login', 
-        {
-            email: email,
-            password: password
-        }).
-        then(function(response) {
-
-            localStorageService.set('token', response.data.token);
-            onSuccess(response);
-
-        }, function(response) {
-            onError(response);
-        });
-    }
 
 }]);
 //# sourceMappingURL=app.js.map

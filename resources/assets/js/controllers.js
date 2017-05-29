@@ -11,8 +11,12 @@ zohoAppControllers.controller('MainController', ['$scope', '$http', function ($s
 			    console.log($scope.invoices);
 		    });
     }
+
+    $scope.filtraInvoices = function(){
+
+    };
     $scope.mayorA = function(){
-    	console.log('Actua');
+    	console.log('mayorA');
     };
 
 	$scope.consultaInvoices();
